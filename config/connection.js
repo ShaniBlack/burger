@@ -15,6 +15,7 @@ else{
 });
 }
 
+
 // Connect to the database
 connection.connect(function(err) {
   if (err) {
