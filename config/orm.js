@@ -1,11 +1,11 @@
-const connection = require("./config/connection.js");
+const connection = require("./connection.js");
 
 // Helper function for SQL syntax
 // Loops through and creates an array of question marks and turns it into a string
 function printQuestionMarks(num) {
-    var arr = [];
+    let arr = [];
   
-    for (var i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) {
       arr.push("?");
     }
   
@@ -65,7 +65,7 @@ let orm = {
           },
     
     updateOne: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
+        let queryString = "UPDATE " + table;
     
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -81,7 +81,23 @@ let orm = {
           cb(result);
         });
       },
+
+      deleteOne: function(table, condition, cb) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
+    
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      }
     };
+
+
 
 
 module.exports = orm;

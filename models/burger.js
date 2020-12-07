@@ -1,4 +1,4 @@
-const orm = require("./config/orm.js");
+const orm = require("../config/orm.js");
 
 // created the code that will call the ORM functions using burger specific input for the ORM
 let burger = {
@@ -19,6 +19,12 @@ let burger = {
             cb(res);
         });
     },
+
+    deleteOne: function(condition, cb) {
+        orm.deleteOne("burgers", condition, function(res) {
+          cb(res);
+        });
+      }
 }
 
 module.exports = burger
