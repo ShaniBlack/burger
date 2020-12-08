@@ -1,9 +1,18 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: burlywood;
+    background-color: rgb(201, 149, 80);
 }
 
 .title {
     font-size: 80px;
     color: black;
+}
+
+.container {
+    padding: 10px;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
 }

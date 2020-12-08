@@ -1,35 +1,70 @@
 {{!-- create template that handlebars can render onto --}}
 
 <h1 class="title text-center">Eat Da Burger!</h1>
+<div class="col text-center"
+     id="burger-gif">
+  <img src="assets/gif/burger.gif"
+       class="gif text-center"
+       id="main-gif">
+</div>
 
-<h2>Burgers Not Devoured</h2>
+<div class="container">
+  <div class="row">
+    <div class="col text-center"
+         id="burgerlist">
+          <div id="burger-img">
+          <img src="assets/img/burger.png"
+               class="img text-center"
+               id="burger_img">
+        </div>
+      <h2>Burgers Ready to Eat</h2>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burger-block devoured=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
+    <div class="col text-center"
+         id="burgersdevoured">
+      <div class="container">
+        <div class="col text-center"
+             id="bite_burger-img">
+          <img src="assets/img/bite_burger.png"
+               class="img text-center"
+               id="bite_img">
+        </div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers Devoured</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+        <h2>Burgers Devoured</h2>
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <button type="submit">Add Burger</button>
-</form>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center"
+           id="add-burger">
+        <h2 class="add-btn">Add a Burger</h2>
+        <form class="create-form"
+              id="add-burger"
+              method="POST">
+
+          <div class="form-group">
+            <input type="text"
+                   id="enter-burger"
+                   name="burger-name">
+          </div>
+
+          <button type="submit "
+                  class="btn btn-default"
+                  id="submit-burger">Add Burger</button>
+        </form>
