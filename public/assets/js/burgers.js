@@ -27,7 +27,7 @@ $(".create-form").on("submit", function(event) {
     event.preventDefault();
     console.log("line 4");
     let newBurger = {
-      burger_name: $("#ca").val().trim(),
+      burger_name: $("#enter-burger").val().trim(),
     };
 
     // Send the POST request.
