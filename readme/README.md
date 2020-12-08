@@ -2,12 +2,13 @@
     ## Description
     This is an app that allows users to add the names of burgers they want. When the user adds a burger, the app displays the burger under Burgers Ready to Eat. They can click on the Devour Me button, which will move the burger under Burgers Devoured. They are also able to click on the Delete Burger! button to delete a burger.
 
-    ![image]("./assets/img/app_screenshot.png")
+    ![image]("C:\Users\Admin\Desktop\Bootcamp\Homework\burger\public\assets\img\app_screenshot.png")
 
     Here are some of the technologies that were used to the create this program:
     *MySQL
-
-    
+    *Node.js
+    *Express
+    *Handlebars    
     
     ## Table of Contents
     * [Installation](#installation)
