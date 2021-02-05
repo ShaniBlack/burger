@@ -80,6 +80,16 @@ const questions = [{
     type: 'input',
     message: 'Is there a test included?',
     name: 'tests'
+},
+{
+    type: 'input',
+    message: 'What is the GitHub link for the application?',
+    name: 'gitlink'
+},
+{
+    type: 'input',
+    message: 'What is the link for the deployed application',
+    name: 'deployedlink'
 }
 ];
 
